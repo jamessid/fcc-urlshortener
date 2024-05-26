@@ -48,7 +48,6 @@ app.post('/api/shorturl', function(req, res, next) {
       if(err) return errorResponse();
       // Otherwise, URL is valid, so save.
       const savedUrl = await Url.create({ url: urlInput });
-      console.log(savedUrl);
       res.json({
         original_url: savedUrl.url,
         short_url: savedUrl._id,
